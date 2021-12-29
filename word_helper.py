@@ -23,7 +23,7 @@ parser.add_argument(
     "--length",
     type=int,
     default=5,
-    help="Length of the words used in search. Wordle game has 5 letter words",
+    help="Length of the words used in the search. Wordle game has words with 5 letters",
 )
 subparsers = parser.add_subparsers(help="sub-command help", dest="subcommand")
 
