@@ -138,7 +138,7 @@ def anagrams(letters, global_word_list):
 
 
 def search_words(known, not_in, global_word_list):
-    """Feed in parameters like"""
+    """Search words that fulfill the conditions"""
     assert len(known) == 5
     result = global_word_list
     for letter in not_in:
@@ -154,8 +154,9 @@ def search_words(known, not_in, global_word_list):
             if letter.lower() == letter:
                 result = [w for w in result if letter == w[i]]
             else:
+                not_letter = letter.lower()
                 result = [
-                    w for w in result if letter.lower() != w[i] and letter.lower() in w
+                    w for w in result if not_letter != w[i] and not_letter in w
                 ]
     return sorted(
         [(x, word_score(x)) for x in result], key=lambda x: x[1], reverse=True
